@@ -940,8 +940,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 sproinger.bodies[0].touches.push(16)
                 sproinger.bodies[16].touches.push(0)
                 sproinger.links.push(linker)
-
-    //  sproinger = new Jelly(160, 100, 1)
             }
             }
 
@@ -1328,12 +1326,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
                     this.y+=this.space
                 }
             }
-            for(let t = 1;t<19;t++){
+            for(let t = 1;t<17;t++){
                 let x = 100
                 let y = (t*40)
-                // let dot = new Circle(x, y,10.01, "gray", 0, 0, .99999,1)
-                let dot = new Circle(Math.random()*canvas.width, Math.random()*canvas.height,10.01, "gray", 0, 0, .99999,1)
-                dot.stop = 1
+                let dot = new Circle(x, y,10.01, "gray", 0, 0, .99999,1)
                 dot.bigbody = new Circle(x, y, 10, getRandomColor()) //(this.space*1)
                 dot.superbigbody = new Circle(this.x, this.y, this.space*10, getRandomColor())
                 dot.touches = []
@@ -1356,12 +1352,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
                     this.y+=this.space
                 }
             }
-            for(let t = 1;t<1;t++){
+            for(let t = 1;t<17;t++){
                 let x = 600
                 let y = (t*40)
-                // let dot = new Circle(x, y,10.01, "gray", 0, 0, .99999,1)
-
-                let dot = new Circle(Math.random()*canvas.width, Math.random()*canvas.height,10.01, "gray", 0, 0, .99999,1)
+                let dot = new Circle(x, y,10.01, "gray", 0, 0, .99999,1)
                 dot.bigbody = new Circle(x, y, 10, getRandomColor()) //(this.space*1)
                 dot.superbigbody = new Circle(this.x, this.y, this.space*10, getRandomColor())
                 dot.touches = []
@@ -1666,15 +1660,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
         if(dregger == 1){
 
             for(let t = 0;t<sproinger.marked.length;t++){
-                if(sproinger.marked[t].stop != 1){
-                    sproinger.marked[t].xmom = 0// (sproinger.marked[t].x-TIP_engine.x)/1
-                    sproinger.marked[t].ymom = 0// (sproinger.marked[t].y-TIP_engine.y)/1
-                    sproinger.marked[t].x = TIP_engine.x
-                    sproinger.marked[t].y = TIP_engine.y
-                    if(keysPressed['g']){
-                        sproinger.marked[t].xmom -= (sproinger.marked[t].x-TIP_engine.x)/200
-                        sproinger.marked[t].ymom -= (sproinger.marked[t].y-TIP_engine.y)/200
-                    }
+                sproinger.marked[t].xmom = 0// (sproinger.marked[t].x-TIP_engine.x)/1
+                sproinger.marked[t].ymom = 0// (sproinger.marked[t].y-TIP_engine.y)/1
+                sproinger.marked[t].x = TIP_engine.x
+                sproinger.marked[t].y = TIP_engine.y
+                if(keysPressed['g']){
+                    sproinger.marked[t].xmom -= (sproinger.marked[t].x-TIP_engine.x)/200
+                    sproinger.marked[t].ymom -= (sproinger.marked[t].y-TIP_engine.y)/200
                 }
             }
         }
